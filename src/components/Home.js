@@ -15,13 +15,7 @@ import Typography from "@mui/material/Typography";
 function Home() {
   const [data, setData] = useState(null);
   const [launches, setLaunches] = useState([]);
-  /////////////////////////////////////////////////////////////////////////////
-  /////////////////////////////////////////////////////////////////////////////
-  // USE V3 NOT v4!!!!!!!!!!!!!!!!!!
-  /////////////////////////////////////////////////////////////////////////////
-  /////////////////////////////////////////////////////////////////////////////
-  /////////////////////////////////////////////////////////////////////////////
-  /////////////////////////////////////////////////////////////////////////////
+
   useEffect(() => {
     fetch("https://api.spacexdata.com/v4/launchpads")
       .then((response) => response.json())
@@ -37,39 +31,12 @@ function Home() {
       .catch((error) => console.log("ERROR!", error));
   }, []);
 
-  //name = item.name
-  //status = item.status
-  //image =item.images.large[0]
-  //details...
-  //item.launch_attempts
-  //item.launch_successes
-  //item.region
-
-  //...top 3 launches
-
   return (
     <div>
       {data && (
         <div>
-          {/* <Typography
-            variant="h1"
-            textAlign="center"
-            // style={{ marginBottom: "30px" }}
-          >
-            Launchpads
-          </Typography> */}
-          {/* <Box
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            height="100vh"
-            style={{ height: "100vh", backgroundColor: "red" }}
-            // sx={{ flexGrow: 1 }}
-          > */}
           <div
             style={{
-              // display: "flex",
-              // justifyContent: "center",
               backgroundColor: "",
             }}
           >
@@ -113,7 +80,6 @@ function Home() {
               ))}
             </Grid>
           </div>
-          {/* </Box> */}
         </div>
       )}
     </div>
